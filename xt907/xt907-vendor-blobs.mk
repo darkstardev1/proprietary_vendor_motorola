@@ -16,11 +16,20 @@
 
 LOCAL_PATH := vendor/motorola/xt907
 
+# Prebuilt libraries that are needed to build open-source libraries
+#PRODUCT_COPY_FILES := \
+#    vendor/motorola/xt907/proprietary/lib/libMali.so:obj/lib/libMali.so \
+#    vendor/motorola/xt907/proprietary/lib/libUMP.so:obj/lib/libUMP.so \
+
+#$(shell mkdir -p out/target/product/zatab/obj/SHARED_LIBRARIES/libMali_intermediates)
+#$(shell mkdir -p out/target/product/zatab/obj/SHARED_LIBRARIES/libUMP_intermediates)
+#$(shell touch out/target/product/zatab/obj/SHARED_LIBRARIES/libMali_intermediates/export_includes)
+#$(shell touch out/target/product/zatab/obj/SHARED_LIBRARIES/libUMP_intermediates/export_includes)
+
 -include device/motorola/xt907/prebuilt.mk
 
 PRODUCT_COPY_FILES += \
-    vendor/motorola/xt907/proprietary/etc/firmware/atmxt-r2.tdat:system/etc/firmware/atmxt-r2.tdat \
-
+    vendor/motorola/xt907/proprietary/etc/firmware/atmxt-r2.tdat:system/etc/firmware/atmxt-r2.tdat
 PRODUCT_COPY_FILES += \
     vendor/motorola/xt907/proprietary/bin/ap_gain.bin:system/bin/ap_gain.bin \
     vendor/motorola/xt907/proprietary/bin/ap_gain_mmul.bin:system/bin/ap_gain_mmul.bin \
@@ -75,7 +84,6 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/xt907/proprietary/etc/wifi/hostapd_default.conf:system/etc/wifi/hostapd_default.conf \
     vendor/motorola/xt907/proprietary/etc/xtwifi.conf:system/etc/xtwifi.conf \
     vendor/motorola/xt907/proprietary/lib/hw/camera.msm8960.so:system/lib/hw/camera.msm8960.so \
-    vendor/motorola/xt907/proprietary/lib/hw/nfc.MSM8960.so:system/lib/hw/nfc.MSM8960.so \
     vendor/motorola/xt907/proprietary/lib/hw/sensorhub.msm8960.so:system/lib/hw/sensorhub.msm8960.so \
     vendor/motorola/xt907/proprietary/lib/hw/sensors.msm8960.so:system/lib/hw/sensors.msm8960.so \
     vendor/motorola/xt907/proprietary/lib/hw/sensors.oem.so:system/lib/hw/sensors.oem.so \
